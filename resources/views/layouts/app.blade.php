@@ -16,7 +16,7 @@
     <script src="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/js/tom-select.complete.min.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/tom-select@2.2.2/dist/css/tom-select.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
-    <link rel="stylesheet" type="text/css" href="{{ asset('build/datatables.min.css') }}" />
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/datatables.min.css') }}" />
     <script>
         function createPopupWin(pageURL, pageTitle,
             popupWinWidth, popupWinHeight) {
@@ -115,7 +115,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.form/4.3.0/jquery.form.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.js"></script>
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script type="text/javascript" src="{{ asset('build/datatables.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/datatables.min.js') }}"></script>
     @yield('js')
 
     <script>

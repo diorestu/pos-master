@@ -70,7 +70,7 @@
 @endsection
 
 @section('js')
-    <script src="{{ asset('build/jquery.maskMoney.min.js') }}"></script>
+    <script src="{{ asset('assets/jquery.maskMoney.min.js') }}"></script>
     <script type="text/javascript">
         $(function() {
             var table = $('.item_datatable').DataTable({

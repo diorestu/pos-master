@@ -20,7 +20,7 @@ class SaldoController extends Controller
                             <i class="bx bx bx-dots-vertical-rounded"></i>
                         </button>
                         <div class="dropdown-menu">
-                            <a href="' . route('pengeluaran.edit', $row->id) . '" class="dropdown-item"><i class="bx bx-edit me-2"></i> Edit</a>
+                            <a href="' . route('saldo.edit', $row->id) . '" class="dropdown-item"><i class="bx bx-edit me-2"></i> Edit</a>
                         </div>
                     </div>';
                 })
@@ -86,7 +86,12 @@ class SaldoController extends Controller
      */
     public function edit($id)
     {
-        //
+        try {
+            $data = Saldo::findOrFail($id);
+            return view('keuangan.saldo_edit', compact('data'));
+        } catch (\Throwable $th) {
+            redirectError('stok.index', $th->getMessage());
+        }
     }
 
     /**
@@ -96,9 +101,19 @@ class SaldoController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $r, $id)
     {
-        //
+        try {
+            $input = $r->all();
+            // dd($input);
+
+            $data = Saldo::findOrFail($id);
+            $data->saldo_awal = ambilAngka($input['saldo_awal']);
+            $data->save();
+            return redirect()->route('saldo.index')->with('success', 'Berhasil Update Saldo Awal!');
+        } catch (\Throwable $th) {
+            redirectError('saldo.index', $th->getMessage());
+        }
     }
 
     /**
